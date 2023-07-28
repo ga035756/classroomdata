@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+    <link rel="stylesheet" href="../_css/bootstrap.css">
+    <script src="../_js/bootstrap.bundle.js"></script>
+    <style>
+        .col-5:nth-child(odd),
+        .col-md-6:nth-child(odd) {
+            background-color: gold;
+        }
+
+        .col-5:nth-child(even),
+        .col-md-6:nth-child(even) {
+            background-color: lightcyan;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h4>Bootstrap Grids</h4>
+    <p><a
+            href="https://www.w3schools.com/bootstrap5/bootstrap_grid_basic.php">https://www.w3schools.com/bootstrap5/bootstrap_grid_basic.php</a>
+    </p>
+    <h4>Bootstrap Grid Examples</h4>
+    <p><a
+            href="https://www.w3schools.com/bootstrap5/bootstrap_grid_examples.php">https://www.w3schools.com/bootstrap5/bootstrap_grid_examples.php</a>
+    </p>
+    <h4>Grid options</h4>
+    <p><a
+            href="https://getbootstrap.com/docs/5.2/layout/grid/#grid-options">https://getbootstrap.com/docs/5.2/layout/grid/#grid-options</a>
+    </p>
+
+    <h4>Row columns</h4>
+    <p><a
+            href="https://getbootstrap.com/docs/5.2/layout/grid/#row-columns">https://getbootstrap.com/docs/5.2/layout/grid/#row-columns</a>
+    </p>
+    <h4>Nesting</h4>
+    <p><a
+            href="https://getbootstrap.com/docs/5.2/layout/grid/#nesting">https://getbootstrap.com/docs/5.2/layout/grid/#nesting</a>
+    </p>
+    <hr>
+
+    <!-- 10. 請試著透過 col-* 或者 row-cols-* 的設定，將畫面平分成四欄 -->
+    <div class="row">
+        <div class="col-5">.col1</div>
+        <div class="col-5">.col2</div>
+        <div class="col-5">.col3</div>
+        <div class="col-5">.col4</div>
+        <div class="col-5">.col5</div>
+        <div class="col-5">.col6</div>
+        <div class="col-5">.col7</div>
+        <div class="col-5">.col8</div>
+        <div class="col-5">.col9</div>
+        <div class="col-5">.col10</div>
+        <div class="col-5">.col11</div>
+        <div class="col-5">.col12</div>
+        <div class="col-5">.col13</div>
+        <div class="col-5">.col14</div>
+        <div class="col-5">.col15</div>
+
+    </div>
+    </div>
+    <br>
+    <!-- 20. 請試著透過 col-斷點-* 的設定當瀏覽器寬度 ≥768px 時，將畫面平分成兩欄 -->
+    <h5>畫面>=768px,畫面平分兩欄</h5>
+    <div class="row">
+        <div class="col-md-6 col-lg-3">colcol</div>
+        <div class="col-md-6 col-lg-3">colcol</div>
+        <div class="col-md-6 col-lg-3">colcol</div>
+        <div class="col-md-6 col-lg-3">colcol</div>
+    </div>
+    <br>
+    <!-- 30. 觀察現有的網頁，進行巢狀堆疊Grid的練習 -->
+    <div class="row">
+        <div class="col-sm-3" style="background-color: blue;">level 1 : .col-sm-3</div>
+    </div>
+    <div class="col-sm-9">
+        <div class="row">
+            <div class="col-8 col-sm-6" style="background-color: red;">
+                lvvel2: .col-8 .col-sm-6
+            </div>
+            <div class="col-4 col-sm-6" style="background-color: yellow;">
+                level2: .col-4 .col-sm-6
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

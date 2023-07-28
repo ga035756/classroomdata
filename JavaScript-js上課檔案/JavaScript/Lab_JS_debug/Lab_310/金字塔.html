@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btnTest">點我一下，開始偵錯</button>
+    <div id="report"></div>
+    <script>
+
+        btnTest.onclick = function () {
+            for (let i = 3; i >= 0; i--) {
+                result2 = ""
+                for (let j = 1; j <= i; j++) {
+                    result2 += "X"
+                }
+                for (let k = 1; k <= 7; k += 2) {
+                    for (let l = 1; l <= k; l++) {
+                        result2 += "O"
+                    }
+
+                    // console.log(k)
+                }
+                console.log(result2)
+
+            }
+
+            var answer = "1 + 2 + 3 + ... + 10 = "
+
+            report.innerHTML = result2;
+
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Array</title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+
+    <input type="button" id="test" value="click me to test your code" />
+    <div id="report"></div>
+
+    <script>
+
+        test.onclick = function () {
+            // 添加元素到陣列的末尾
+            // --------------------
+            // 參考資料: 
+            // https://www.w3schools.com/jsref/jsref_push.asp
+            // 
+            // 任務: 
+            // 請寫程式，新增數字 10 到陣列的末尾
+
+            var data = [3, 0, 1, 8, 7, 2, 5, 4, 9, 6];
+
+            // 你的任務程式...
+            // data.push(10)
+            // data.pop()
+            // data.unshift(1,2)
+            // data.shift()
+            // data.splice(4,2,100,200)
+            // var sum = 0
+            // data.forEach((item) => {
+            //     sum += item
+            // })
+            // alert(sum)
+            // var dataList = data.map(function (item) {
+            //     return item + 10;
+            // })
+            // var dataList2 = data.map(x => x + 100)
+            // var dataList = data.filter(x => x != 4)
+            var [x, y, z] = [...dataList]
+            var result = 
+            // report.innerText = data.toString();
+            // 或者
+            report.innerText = dataList.join(" | ");
+
+
+        }  // end of test.onclick
+
+    </script>
+
+</body>
+
+</html>

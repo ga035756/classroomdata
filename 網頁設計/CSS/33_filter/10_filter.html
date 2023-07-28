@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>filter</title>
+
+    <style>
+        
+        img {
+            width: 300px;
+            
+
+            /* 請在這邊測試各種濾鏡的效果；注意不同濾鏡需要的參數單位不同 */
+
+        }
+        input[id="brightness"]:checked~img{         
+           filter: brightness(50%);
+        }
+        input[id="blur"]:checked~img{         
+           filter: blur(5px);
+        }
+        input[id="contrast"]:checked~img{         
+           filter: contrast(200%);
+        }
+    </style>
+</head>
+
+<body>
+    <h3><a href='https://www.w3schools.com/cssref/css3_pr_filter.asp'>CSS filter Property</a></h3>
+    <h3><a href='https://www.w3schools.com/cssref/playit.asp?filename=playcss_filter&preval=none'>CSS Property Play
+            it</a></h3>
+    <hr>
+    <input name="filter" id="brightness" type="radio">
+    <label for="brightness">brightness</label>
+    <input name="filter" id="blur" type="radio">
+    <label for="blur">blur</label>
+    <input name="filter" id="contrast" type="radio">
+    <label for="contrast">contrast</label>
+    <img for="brightness" src="img/sunny.jpg" alt="">
+</body>
+
+</html>

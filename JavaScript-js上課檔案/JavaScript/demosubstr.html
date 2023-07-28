@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var num = Math.floor(Math.random() * 999)
+        var stringLenth = num.toString().length
+        switch (stringLenth) {
+            case 1:
+                numString="000"+num.toString()
+                break;
+            case 2:
+            numString="00"+num.toString()
+                break;
+            case 3:
+            numString="0"+num.toString()
+                break;
+            case 4:
+            numString=num.toString()
+                break;
+        }
+        alert(numString+","+stringLenth)
+    </script>
+
+</body>
+
+</html>

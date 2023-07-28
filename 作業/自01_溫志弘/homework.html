@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社團出遊報名</title>
+    <link rel="icon" href="./img/favico.png">
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid firebrick;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./img/top.jpg" style="height: 500px;">
+    <h1 style="color: rgb(10, 92, 88);">社團出遊報名</h1>
+    <p style="color: gray;">一年一度的社遊又來了！<br>
+        今年暑假我們要一起去大板根兩天一夜！<br>
+    </p>
+    <br>
+    <p style="color: gray; font-size: larger;">
+        大板根森林溫泉渡假村<br>
+        237新北市三峽區插角里80號<br>
+    </p>
+    <img src="./img/inside.jpg"><br><br><br>
+    <label for="userName">1 姓名</label><br><br>
+    <input type="text" id="userName" placeholder="請填入文字" style="width: 500px;"><br><br><br>
+    <label for="phone">2 連絡電話</label><br><br>
+    <input type="tel;" id="phone" placeholder="請填入電話號碼" style="width: 500px;"><br><br><br>
+    <label for="idCard">3 身分證字號</label><br>
+    <label style="color: grey;">僅作為保險使用</label><br>
+    <input type="text;" id="idCard" placeholder="請填入文字" style="width: 500px;"><br><br><br>
+    <label for="contenttext">4 緊急聯絡人/關係/緊急聯絡人電話</label><br>
+    <label style="color: grey;">僅作為保險使用</label><br>
+    <textarea placeholder="請填入文字" name="" id="contenttext" cols="65" rows="10"></textarea><br><br><br>
+    <label for="">5 用餐習慣</label><br><br>
+    <table>
+        <tr>
+            <td><input type="radio" name="foodeat" id="meat">
+                <label for="meat">葷</label>
+            </td>
+            <td>
+                <input type="radio" name="foodeat" id="vegetable">
+                <label for="vegetable">素</label>
+            </td>
+
+        </tr>
+    </table><br><br><br>
+    <label for="price">6 可接受預算範圍(200~1500元)</label>
+    <input type="range" id="price" min="200" max="1500"><br><br><br>
+    <label for="">7 對活動有什麼期待嗎</label><br><br>
+    <textarea placeholder="請填入文字" name="" id="" cols="65" rows="10"></textarea><br><br><br>
+    <input type="button" value="送出">
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <!-- 01. <audio>: 嵌入音檔. ex: media/Mess_Call.mp3 -->
+    <!-- controls: 控制面板-->
+    <!-- loop: 循環播放-->
+    <!-- muted: 設置靜音-->
+    <!-- autoplay: 自動播放-->
+    <!-- <audio src="./media/Mess_Call.mp3" controls muted></audio> -->
+    <!-- 關於autoplay屬性: -->
+    <!-- https://developer.chrome.com/blog/autoplay -->
+
+
+    <!-- 02. <video>: 嵌入影片檔案. ex: media/sayhi.mp4 -->
+    <!-- poster: 封面圖片. ex: media/poster.png -->
+
+    <video src="./media/sayhi.mp4" controls loop muted poster="./media/poster.png"></video>
+
+    <!-- <source> -->
+    <!-- https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_video_all -->
+
+
+
+    <!-- 03. 透過 <iframe> 嵌入 youtube 影片. ex: https://youtu.be/ewZ_YWbIWXI -->
+    <!-- 在 youtube 影片上點右鍵 -> 複製嵌入程式碼 -->
+    <iframe width="640" height="360" src="https://www.youtube.com/embed/ewZ_YWbIWXI"
+        title="W3Schools HTML Tutorial 01 - Introduction" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+
+    <!-- 04. 透過 <iframe> 嵌入 google 地圖-->
+    <!-- 在地圖點選分享 -> 嵌入地圖 -> 複製HTML -->
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14559.787116504069!2d120.58546685!3d24.1735992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3469160555555555%3A0x9a48b1b4eac36a6e!2z5oOg54m556eR5oqA6IKh5Lu95pyJ6ZmQ5YWs5Y-4!5e0!3m2!1szh-TW!2stw!4v1681883562545!5m2!1szh-TW!2stw"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</body>
+
+</html>

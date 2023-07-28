@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* 01. 改變滑鼠經過 radio 的樣式 */
+        input[type="radio"] {
+            cursor: pointer;
+        }
+
+        /* 02-01. :valid 驗證通過時的樣式設定 */
+        input:valid {
+            background-color: lightgreen;
+        }
+
+        /* 02-02. :invalid 驗證不通過時的樣式設定 */
+        input:invalid {
+            background-color: lightcoral;
+        }
+
+
+        /* 03-01. 驗證通過時 輸入框後面顯示 ✓ */
+
+        input:valid+span::after {
+            content: "✓";
+            color: lightgreen;
+        }
+
+        /* 03-02. 驗證不通過時 輸入框後面顯示  */
+
+        input:invalid+span::after {
+            content: "✖";
+            color: red;
+        }
+
+        /* 04-01. 設定取得焦點的背景顏色greenyellow */
+
+
+        /* 04-02. 設定勾選時 label 顏色 blue */
+        #cb:checked+label {
+            color: blue;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <!-- 照上方CSS設定 -->
+        <!-- 01. 產生 單選按鈕元素 -->
+        <input type="radio"><br>
+
+        <!-- 02. 產生 可以輸入 email 的方框 以及 -->
+        <!--     產生 可以輸入 文字  的方框，並限制只能輸入大寫英文 以及 -->
+        <!--     產生 可以輸入 電話  的方框，並限制為台灣手機號碼格式 以及 -->
+        <!--     產生 可以輸入 文字  的方框，並限制輸入身分證字號格式 -->
+        Email:<input type="email"><span></span><br>
+        text:<input type=" text" pattern="[A-Z]{3,5}"><span></span><br>
+        tel:<input type="tel" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}" placeholder="####-###-###"><span></span><br>
+        ID Number:<input type="text" pattern="[A-Za-z]{1}[0-9]{9}"><span></span><br><br>
+
+
+        <input type="checkbox" id="cb">
+        <label for="cb">代辦事項一</label>
+
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<div id="debug"></div>
+<script>
+
+    var playerList =
+        [
+            { firstName: "Jeremy", lastName: "Lin" },
+            { "firstName": "Derek", lastName: "Jeter" },
+            { firstName: "Lion", lastName: "Messi" }
+        ];
+
+    var s = JSON.stringify(playerList);
+    // debug.innerHTML = s;
+
+    var fromServer = '[{"firstName":"Jeremy","lastName":"Lin"},{"firstName":"Derek","lastName":"Jeter"},{"firstName":"Lion","lastName":"Messi"}]';
+    var dataList = JSON.parse(fromServer);
+    debug.innerHTML = dataList[2].lastName;
+
+
+</script>

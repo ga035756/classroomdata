@@ -1,0 +1,237 @@
+_______________________________________________________________
+
+2023-05-18  14:00
+delete.html:
+_______________________________________________________________
+
+
+    <script>
+
+        var todoTableId = sessionStorage.getItem("id");
+        var url = `/todo/item/${todoTableId}`;
+        $.get(url, function (e) {
+            $("#Name").text(e.title);
+            $("#isComplete").prop("checked", e.isComplete)
+        })
+
+        $("#deleteButton").on("click", async function () {
+            var result = await $.ajax({
+                type: "delete",
+                url: `/todo/delete/${todoTableId}`,
+            })
+            window.location = "/index.html";
+        })
+    </script>
+
+
+_______________________________________________________________
+
+2023-05-18  13:50
+index.html:
+_______________________________________________________________
+
+
+<script>
+
+    var todoTable = [
+        {todoTableId: 1, title: "Job XXX", isComplete: 1},
+        {todoTableId: 2, title: "Job YYY", isComplete: 0},
+        {todoTableId: 3, title: "Job ZZZ", isComplete: 1}
+    ];
+
+    $.get("/todo/list", function (e) {
+        todoTable = e;
+        $("#jobList tbody").empty();
+        for (let i = 0; i < todoTable.length; i++) {
+            let trText = `
+                <tr>
+                    <td>
+                        ${todoTable[i].title}
+                    </td>
+                    <td>
+                        <input class="check-box" disabled="disabled"
+                            type="checkbox" ${ todoTable[i].isComplete ? "checked" : "" } />
+                    </td>
+                    <td>
+                        <span class="float-right">
+                            <a href="edit.html" onclick="doEdit(${i})" class="btn btn-outline-primary btn-sm">編輯</a> |
+                            <a href="delete.html" onclick="doDelete(${todoTable[i].todoTableId})" class="btn btn-outline-danger btn-sm">刪除</a>
+                        </span>
+                    </td>
+                </tr>
+            `;
+
+            $("#jobList tbody").append(trText);
+        }
+    })
+
+    function doEdit(index) {
+        var todoText = JSON.stringify(todoTable[index]);
+        sessionStorage.setItem("todoItem", todoText);
+    }
+
+    function doDelete(id) {
+        sessionStorage.setItem("id", id);
+    }
+
+</script> 
+
+_______________________________________________________________
+
+2023-05-18  11:40
+edit.html:
+_______________________________________________________________
+
+
+<script>
+    var todoItem = JSON.parse(sessionStorage.getItem("todoItem"));
+    // $("#Name").prop("value", todoItem.title);
+    console.log(todoItem.todoTableId);
+    $("#Name").val(todoItem.title);
+    $("#IsComplete").prop("checked", todoItem.isComplete === 1 ? true : false);
+   
+    $("#okButton").on("click", async function () {
+        var dataToServer = {
+            todoTableId: todoItem.todoTableId,
+            title: $("#Name").prop("value"),
+            isComplete: $("#IsComplete").prop("checked") ? 1 : 0
+        }
+
+        var result = await $.ajax({
+            type: "put",
+            url: "/todo/item",
+            contentType: "application/json",
+            data: JSON.stringify(dataToServer)
+        });
+
+        //console.log(result);
+        window.location = "/index.html";
+    })
+
+</script>
+
+
+
+_______________________________________________________________
+
+2023-05-18  11:00
+index.html:
+_______________________________________________________________
+
+
+<script>
+
+    var todoTable = [
+        {todoTableId: 1, title: "Job XXX", isComplete: 1},
+        {todoTableId: 2, title: "Job YYY", isComplete: 0},
+        {todoTableId: 3, title: "Job ZZZ", isComplete: 1}
+    ];
+
+    $.get("/todo/list", function (e) {
+        todoTable = e;
+        $("#jobList tbody").empty();
+        for (let i = 0; i < todoTable.length; i++) {
+            let trText = `
+                <tr>
+                    <td>
+                        ${todoTable[i].title}
+                    </td>
+                    <td>
+                        <input class="check-box" disabled="disabled"
+                            type="checkbox" ${ todoTable[i].isComplete ? "checked" : "" } />
+                    </td>
+                    <td>
+                        <span class="float-right">
+                            <a href="edit.html" onclick="doEdit(${i})" class="btn btn-outline-primary btn-sm">編輯</a> |
+                            <a href="delete.html" class="btn btn-outline-danger btn-sm">刪除</a>
+                        </span>
+                    </td>
+                </tr>
+            `;
+
+            $("#jobList tbody").append(trText);
+        }
+    })
+
+    function doEdit(index) {
+        var todoText = JSON.stringify(todoTable[index]);
+        sessionStorage.setItem("todoItem", todoText);
+    }
+
+
+</script> 
+
+
+
+_______________________________________________________________
+
+2023-05-18  10:00
+create.html:
+_______________________________________________________________
+
+
+<script>
+
+    $("#okButton").on("click", async function () {
+        var dataToServer = {
+            title: $("#Name").prop("value"),
+            isComplete: $("#IsComplete").prop("checked") ? 1 : 0
+        }
+        var result = await $.ajax({
+            type: "post",
+            url: "/todo/create",
+            contentType: "application/json",
+            data: JSON.stringify(dataToServer)
+        });
+        // console.log(result);
+        window.location = "/index.html";
+    })
+    
+</script>
+
+
+
+
+_______________________________________________________________
+
+2023-05-16  16:30
+_______________________________________________________________
+
+
+<script>
+
+    var todoTable = [
+        {todoTableId: 1, title: "Job XXX", isComplete: 1},
+        {todoTableId: 2, title: "Job YYY", isComplete: 0},
+        {todoTableId: 3, title: "Job ZZZ", isComplete: 1}
+    ];
+
+    $.get("/todo/list", function (e) {
+        todoTable = e;
+        $("#jobList tbody").empty();
+        for (let i = 0; i < todoTable.length; i++) {
+            let trText = `
+                <tr>
+                    <td>
+                        ${todoTable[i].title}
+                    </td>
+                    <td>
+                        <input class="check-box" disabled="disabled"
+                            type="checkbox" ${ todoTable[i].isComplete ? "checked" : "" } />
+                    </td>
+                    <td>
+                        <span class="float-right">
+                            <a href="edit.html" class="btn btn-outline-primary btn-sm">編輯</a> |
+                            <a href="delete.html" class="btn btn-outline-danger btn-sm">刪除</a>
+                        </span>
+                    </td>
+                </tr>
+            `;
+
+            $("#jobList tbody").append(trText);
+        }
+    })
+
+
+
+</script>   

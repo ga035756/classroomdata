@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #div_B {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            animation-name: apple;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        
+        /* red -> blue -> yellow -> green -> red */
+        @keyframes apple {
+            0% { 
+                background-color: red; 
+                top: 0;
+                left: 0;
+            }
+            25% { 
+                background-color: blue; 
+                top: 0;
+                left: 100px;
+            }
+            50% { 
+                background-color: yellow;
+                top: 100px; 
+                left: 100px;
+            }
+            75% { 
+                background-color: green;
+                top: 100px;
+                left: 0; 
+            }
+            100% { 
+                background-color: red;
+                top: 0;
+                left: 0; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="div_B"></div>
+</body>
+</html>

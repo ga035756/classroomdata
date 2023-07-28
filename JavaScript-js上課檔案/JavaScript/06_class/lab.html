@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        class CAnimal {
+            constructor(weightValue = 1) {
+                this._weight = 0;
+                this.weight = weightValue;
+            }
+            get weight() {
+                return this._weight;
+            }
+            set weight(weightValue) {
+                if (weightValue > 0) {
+                    this._weight = weightValue;
+                }
+            }
+            makeSound() {
+                alert("Animal: ...");
+            }
+        }
+        // let obj = new CAnimal();
+        let obj = new CAnimal(6);
+        // alert(obj.weight.toString())
+        obj.makeSound()
+        // alert(obj.makeSound())
+    </script>
+</body>
+
+</html>

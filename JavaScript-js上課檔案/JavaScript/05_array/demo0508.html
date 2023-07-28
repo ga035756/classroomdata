@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var dataList = [10, 20, 30];
+        // var x = dataList[0];
+        // var y = dataList[1];
+        // var z = dataList[2];
+        // 解構賦值:
+        // var [x, y, z] = [10, 20, 30];
+        // var [x, y, z] = dataList;
+        // var [x, y, z] = [dataList];
+        var [x, y, z] = [...dataList];
+        var result = `x = ${x}, y = ${y}, z=${z}`;
+        alert(result);
+    </script>
+    
+</body>
+</html>

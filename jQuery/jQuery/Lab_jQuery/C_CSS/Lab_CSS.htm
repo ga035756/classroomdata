@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#btnTry").click(function () {
+        // 在這裏寫程式
+        // $("#betaRibbon").addClass("beta-ribbon");
+        // $("#betaRibbon").removeClass("beta-ribbon");
+        // $("#betaRibbon").toggleClass("beta-ribbon");
+
+        // .	繼續加寫下列程式，存檔，瀏覽 Lab_CSS.htm，點一下按鈕，觀察字體變化。
+        // $("#report").css("font-family", "Arial");
+
+
+
+        // 7.	繼續加寫下列程式，存檔，再測一次效果。
+        $("#report").css({ "font-family": "Arial", "font-size": "128px" });
+
+
+
+      })
+    });
+  </script>
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+
+  <div class="beta-ribbon-wrapper">
+    <div id="betaRibbon">
+      <a href="/about/#beta">Beta</a>
+    </div>
+  </div>
+
+  <div id="report">Report:<br></div>
+  <hr>
+  <form action="" method="put" onsubmit="return false;">
+    <button type="button" id="btnTry">Try</button>
+  </form>
+</body>
+
+</html>

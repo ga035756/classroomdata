@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function showStars(count, what = "*") {
+            let result = ""
+            if (count > 0 && count <= 21) {
+                for (i = 1; i <= count; i+=2) {
+                    for (j = 1; j <= i; j++) {
+                        // for(k=1;k<count-j;k++){
+                        //     result +=" "
+                        // }
+                        result += what
+                    }
+                    result += "\n"
+                }
+
+            } else if ( count > 21){
+                result = "Wroung !count > 21"
+            }else{
+                result = "Wroung !count < 0"
+            }
+            alert(result)
+        }
+        showStars(21);
+        // setTimeout(showStars,3000);
+
+    </script>
+</body>
+
+</html>
